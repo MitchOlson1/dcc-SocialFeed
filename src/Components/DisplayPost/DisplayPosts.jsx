@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import ShowPost from '../ShowPosts/ShowPost';
 
 const DisplayPosts = (props) => {
     return (   
@@ -8,12 +10,9 @@ const DisplayPosts = (props) => {
           </tr>
         </thead>
         <tbody>
-        {props.parentPosts.map((posts, index) => {
+        {props.parentPosts.map((post, index) => {
           return (
-            <tr>
-              <td>{index + 1}</td>
-              <td>{posts.Posts}</td>
-            </tr>
+          <ShowPost post={post} />
             );
         })}
         </tbody>
@@ -22,6 +21,6 @@ const DisplayPosts = (props) => {
     );
 } 
 
-
+// post component
  
 export default DisplayPosts;

@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
 import DisplayPosts from './Components/DisplayPost/DisplayPosts';
 import CreatePost from './Components/CreatePosts/CreatePost';
-
+import NavBar from './Components/NavBar/NavBar';
 
 
 function App() {
 
-  const [posts] = useState([{}])
+  const [posts,setPosts] = useState([{
+    name: "Mitch Olson", body:"Hi",
+  }])
+
+  function addNewPost(post){
+    let newPost = [...posts, post];
+
+    setPosts(newPost);
+  }
   return (
     <div>
-     <DisplayPosts parentPosts = {posts}/>
-     <CreatePost />
+      <NavBar/>
+      <CreatePost addNewPost={addNewPost} />
+      <DisplayPosts parentPosts = {posts}/>
+     
     </div>
   );
 }
