@@ -4,6 +4,7 @@ import CreatePost from './Components/CreatePosts/CreatePost';
 import NavBar from './Components/NavBar/NavBar';
 
 
+
 function App() {
 
   const [posts,setPosts] = useState([{
